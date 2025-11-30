@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios'; // Установи npm i axios предварительно
+import axios from 'axios'; 
 import './TheoryPage.css';
 import psbLogo from './psb-logo.png';
 
-// Компонент для отображения файлов
+
 const TheoryFilesList = ({ theoryId }) => {
     const [files, setFiles] = useState([]);
 
     useEffect(() => {
-        // Получаем список файлов для конкретной теории
         axios.get(`/api/theory-files-list/${theoryId}`).then(response => {
             setFiles(response.data);
         }).catch(error => {
