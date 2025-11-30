@@ -1,0 +1,119 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+background: linear-gradient(
+    135deg,               /* Чёткое направление под углом */
+    #ff6b35 0%,         /* Чистый оранжевый в начале */
+    #ff8c5a 25%,
+    #ff9c66 40%,      /* Лёгкий переход к более светлому */
+    #00407a 60%,       /* Синий ровно на середине */
+    #003366 75%,       /* Тёмный синий к концу */
+    #002a55 100%      /* Глубокий синий в конце */
+  );
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden; /* Чтобы градиент заполнял всё пространство */
+}
+
+.training-label {
+  font-size: 36px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+  color: white;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gradient-line {
+  width: 80%;
+  height: 6px;
+  background: linear-gradient(
+    90deg,
+    #ffffff
+  );
+  border-radius: 3px;
+  margin-bottom: 40px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.97);
+  padding: 50px 70px;
+  border-radius: 25px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  max-width: 550px;
+  position: relative;
+  z-index: 1; /* Карточка поверх градиента */
+}
+.logo-container {
+  margin-bottom: 40px;       /* Увеличен отступ под логотип */
+}
+
+.psb-logo-img {
+  max-width: 220px;         /* Увеличен размер логотипа */
+  height: auto;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.2)); /* Более выраженная тень */
+}
+
+.start-button {
+  background: #ff6b35;
+  color: white;
+  border: none;
+  padding: 20px 50px;     /* Увеличены отступы в кнопке */
+  font-size: 20px;       /* Крупнее текст */
+  font-weight: 700;       /* Чуть жирнее */
+  border-radius: 60px;    /* Более скруглённая */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;   /* Немного больше межбуквенного интервала */
+}
+
+.start-button:hover {
+  background: #e05428;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.6);
+}
+
+.start-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+  .training-label {
+    font-size: 28px;
+    letter-spacing: 3px;
+    width: 90%;
+  }
+  
+  .content-container {
+    padding: 40px 50px;
+    max-width: 90%;
+  }
+  
+  .psb-logo-img {
+    max-width: 180px;
+  }
+  
+  .start-button {
+    padding: 16px 40px;
+    font-size: 18px;
+  }
+}
