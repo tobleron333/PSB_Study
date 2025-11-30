@@ -28,7 +28,7 @@ def upload_student_solution():
     with psycopg2.connect(**DB_CONNECTION_PARAMS) as conn:
         with conn.cursor() as cur:
             cur.execute(
-                "UPDATE homeworks SET student_files = %s WHERE id = %s",
+                "UPDATE homeworks SET student_answer = %s WHERE id = %s",
                 (bytes(data), homework_id)
             )
 
@@ -52,7 +52,7 @@ def get_theory_files_list(theory_id):
         with conn.cursor() as cur:
             cur.execute("SELECT id, title FROM theory WHERE id = %s", (theory_id,))
             rows = cur.fetchall()
-            return jsonify(rows)
+            return jsonify([{"id": r[0], "title": r[1]} for r in rows])
 
 @app.route("/api/get-homework-file/<int:homework_id>", methods=["GET"])
 def get_homework_file(homework_id):
@@ -72,7 +72,7 @@ def get_homework_files_list(theory_id):
         with conn.cursor() as cur:
             cur.execute("SELECT id, title FROM homeworks WHERE theory_id = %s", (theory_id,))
             rows = cur.fetchall()
-            return jsonify(rows)
+            return jsonify([{"id": r[0], "title": r[1]} for r in rows])
 
 if __name__ == "__main__":
     app.run(debug=True)
