@@ -33,7 +33,34 @@ const TheoryFilesList = ({ theoryId }) => {
     );
 };
 
-// Главный компонент страницы теории
+const PublicFilesList = () => {
+    const staticFiles = [
+        { id: 1, title: 'Теория Алгоритмы 1.docx', link: '/static/Теория Алгоритмы 1.docx' },
+        { id: 2, title: 'Теория Алгоритмы 2.docx', link: '/static/Теория Алгоритмы 2.docx' },
+        { id: 3, title: 'Теория Алгоритмы 3.docx', link: '/static/Теория Алгоритмы 3.docx' },
+        { id: 4, title: 'Теория Алгоритмы 4.docx', link: '/static/Теория Алгоритмы 4.docx' },
+        { id: 5, title: 'Теория Алгоритмы 5.docx', link: '/static/Теория Алгоритмы 5.docx' },
+
+    ];
+
+    return (
+        <ul className="file-list">
+            {staticFiles.map(file => (
+                <li key={file.id}>
+                    <a
+                        href={file.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="download-link"
+                    >
+                        {file.title}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
 const LessonPage = () => {
     return (
         <div className="theory-page">
@@ -54,7 +81,8 @@ const LessonPage = () => {
                 <aside className="sidebar">
                     <div className="sidebar-content">
                         <h2>Материалы урока</h2>
-                        <TheoryFilesList theoryId={1} /> {/* Передаёшь сюда id теории */}
+                        <TheoryFilesList theoryId={1} />
+                        <PublicFilesList />
                     </div>
                 </aside>
                 <main className="main-content">

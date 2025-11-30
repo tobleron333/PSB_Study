@@ -32,6 +32,34 @@ const HomeworkFilesList = ({ theoryId }) => {
     );
 };
 
+const PublicFilesList = () => {
+    const staticFiles = [
+        { id: 1, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 1.docx' },
+        { id: 2, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 2.docx' },
+        { id: 3, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 3.docx' },
+        { id: 4, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 4.docx' },
+        { id: 5, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 5.docx' },
+ 
+    ];
+
+    return (
+        <ul className="file-list">
+            {staticFiles.map(file => (
+                <li key={file.id}>
+                    <a
+                        href={file.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="download-link"
+                    >
+                        {file.title}
+                    </a>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
 const UploadForm = ({ onUploadSuccess }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [uploadStatus, setUploadStatus] = useState(null);
@@ -78,7 +106,6 @@ const UploadForm = ({ onUploadSuccess }) => {
     );
 };
 
-
 const PracticePage = () => {
     return (
         <div className="practice-page">
@@ -100,6 +127,7 @@ const PracticePage = () => {
                     <div className="sidebar-content">
                         <h2>Задания по практике</h2>
                         <HomeworkFilesList theoryId={1} />
+                        <PublicFilesList />
 
                         <hr />
 
