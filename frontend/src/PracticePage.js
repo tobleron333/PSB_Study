@@ -35,10 +35,10 @@ const HomeworkFilesList = ({ theoryId }) => {
 const PublicFilesList = () => {
     const staticFiles = [
         { id: 1, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 1.docx' },
-        { id: 2, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 2.docx' },
-        { id: 3, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 3.docx' },
-        { id: 4, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 4.docx' },
-        { id: 5, title: 'ДЗ Алгоритмы 1.docx', link: '/static/ДЗ Алгоритмы 5.docx' },
+        { id: 2, title: 'ДЗ Алгоритмы 2.docx', link: '/static/ДЗ Алгоритмы 2.docx' },
+        { id: 3, title: 'ДЗ Алгоритмы 3.docx', link: '/static/ДЗ Алгоритмы 3.docx' },
+        { id: 4, title: 'ДЗ Алгоритмы 4.docx', link: '/static/ДЗ Алгоритмы 4.docx' },
+        { id: 5, title: 'ДЗ Алгоритмы 5.docx', link: '/static/ДЗ Алгоритмы 5.docx' },
  
     ];
 
